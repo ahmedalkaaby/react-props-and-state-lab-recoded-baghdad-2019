@@ -22,7 +22,7 @@ class Pet extends React.Component {
           <div className="description">
             <p>Age:{this.props.pet.age}</p>
             <p>Weight: {this.props.pet.weight {
-              
+
             }}</p>
           </div>
         </div>
