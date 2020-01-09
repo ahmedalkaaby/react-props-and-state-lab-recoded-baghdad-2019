@@ -15,6 +15,25 @@ class App extends React.Component {
     }
   }
 
+  onChangeType = value => {
+      this.setState({
+        type: value
+      })
+    }
+    fetchPets = () => {
+      if (this.state.filters.type === 'all') {
+        fetch("/api/pets").then(res => res.json()).then(json => {
+          this.setState({
+            pets: json
+          })
+        })
+      } else {
+        fetch("/api/pets?type=" + this.state.filters.type).then(res => res.json).then(json => this.setState({
+          pets: json
+        }))
+      }
+    }
+
   render() {
     return (
       <div className="ui container">
