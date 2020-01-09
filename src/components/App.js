@@ -38,6 +38,14 @@ class App extends React.Component {
       }
     }
 
+    onAdoptPet = (id) => {
+        this.state.pets.find(pet => {
+          if (pet.id === id) {
+            pet.isAdopted = true
+          }
+        })
+      }
+      
   render() {
     return (
       <div className="ui container">
